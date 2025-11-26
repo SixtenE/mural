@@ -23,7 +23,7 @@ export default function ImageDisplay({
     return (
       <div className="w-xl aspect-square border border-black flex flex-col items-center justify-center">
         <Image
-          src={`data:image/png;base64,${generatedImage}`}
+          src={generatedImage}
           alt="Generated Mural"
           width={512}
           height={512}

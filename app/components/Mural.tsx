@@ -25,35 +25,21 @@ export default function Page({
     setIsGenerating(true);
     setGeneratedImage(null);
 
-    const images = new FormData();
-    const artResponse = await fetch(selectedArt);
-    const artBlob = await artResponse.blob();
-    const artFile = new File(
-      [artBlob],
-      selectedArt.split("/").pop() || "art.webp",
-      { type: artBlob.type }
-    );
-
-    const buildingResponse = await fetch(selectedBuilding);
-    const buildingBlob = await buildingResponse.blob();
-    const buildingFile = new File(
-      [buildingBlob],
-      selectedBuilding.split("/").pop() || "building.png",
-      { type: buildingBlob.type }
-    );
-
-    images.append("image1", artFile);
-    images.append("image2", buildingFile);
-
     const result = await fetch("/api/generate", {
       method: "POST",
-      body: images,
+      body: JSON.stringify({
+        art: selectedArt,
+        building: selectedBuilding,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
 
     const data = await result.json();
     console.log(data);
 
-    setGeneratedImage(data.image.b64_json);
+    setGeneratedImage(data.result);
     setIsGenerating(false);
   }
 

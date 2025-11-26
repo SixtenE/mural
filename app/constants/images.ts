@@ -5,7 +5,7 @@ export const muralArt = [
 ];
 
 export const muralBuildings = [
-  "/images/building_1.png",
-  "/images/building_2.png",
-  "/images/building_3.png",
+  "/images/building_1.jpg",
+  "/images/building_2.jpg",
+  "/images/building_3.jpg",
 ];
