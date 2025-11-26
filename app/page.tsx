@@ -10,9 +10,9 @@ export default function Page() {
   const [isGenerating, setIsGenerating] = useState(false);
 
   return (
-    <main className="container mx-auto flex flex-col px-4">
+    <main className="container mx-auto flex flex-col px-4 pb-32">
       <Header />
-      <div className="flex flex-col md:flex-row justify-between">
+      <div className="flex flex-col md:flex-row justify-between gap-y-8">
         <Mural
           setGeneratedImage={setGeneratedImage}
           setIsGenerating={setIsGenerating}
