@@ -44,7 +44,7 @@ export default function Page({
   }
 
   return (
-    <div className="w-xl aspect-square border border-black flex flex-col">
+    <div className="w-full sm:w-xl aspect-square border border-black flex flex-col">
       <ImageSelector
         title="Pick an artwork"
         images={muralArt}

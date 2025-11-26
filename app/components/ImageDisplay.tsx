@@ -13,7 +13,7 @@ export default function ImageDisplay({
 }: ImageDisplayProps) {
   if (isGenerating && !generatedImage) {
     return (
-      <div className="w-xl aspect-square border border-black flex flex-col items-center justify-center animate-pulse">
+      <div className=" w-full sm:w-xl aspect-square border border-black flex flex-col items-center justify-center animate-pulse">
         <p className="font-mono text-md">Generating...</p>
       </div>
     );
